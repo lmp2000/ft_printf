@@ -1,21 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-jes <lude-jes@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 14:32:07 by lude-jes          #+#    #+#             */
-/*   Updated: 2025/11/13 22:50:34 by lude-jes         ###   ########.fr       */
+/*   Created: 2025/11/13 22:02:28 by lude-jes          #+#    #+#             */
+/*   Updated: 2025/11/13 22:46:03 by lude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft/libft.h"
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
+int	data_type(char c, va_list args)
+{
+	/*handle format*/
+}
 
-int	ft_printf(const char *format, ...);
+int	ft_printf(const char *format, ...)
+{
+	int		i;
+	int		count;
+	va_list	args;
 
-#endif
+	i = 0;
+	va_start(args, format);
+	while (format[i])
+	{
+		if (format[i] == '%' && format[i + 1])
+		{
+			i++;
+			
+		}
+		else
+		{
+			/*meter count = ao return do putchar*/
+		}
+		i++;
+	}
+}

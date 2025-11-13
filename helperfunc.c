@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   helperfunc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-jes <lude-jes@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 14:32:07 by lude-jes          #+#    #+#             */
-/*   Updated: 2025/11/13 22:50:34 by lude-jes         ###   ########.fr       */
+/*   Created: 2025/11/13 22:43:15 by lude-jes          #+#    #+#             */
+/*   Updated: 2025/11/13 22:44:22 by lude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft/libft.h"
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft/libft.h"
-
-int	ft_printf(const char *format, ...);
-
-#endif
+/*do helper functions*/
