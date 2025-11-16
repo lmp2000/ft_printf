@@ -6,7 +6,7 @@
 /*   By: lude-jes <lude-jes@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:02:28 by lude-jes          #+#    #+#             */
-/*   Updated: 2025/11/16 17:57:15 by lude-jes         ###   ########.fr       */
+/*   Updated: 2025/11/16 23:38:56 by lude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ int	data_type(char c, va_list args)
 		return (handle_int(va_arg(args, int)));
 	else if (c == 'u')
 		return (handle_unsigned(va_arg(args, unsigned int)));
+	else if (c == 'x')
+		return (handle_hex(va_arg(args, unsigned int), 0));
+	else if (c == 'X')
+		return (handle_hex(va_arg(args, unsigned int), 1));
+	else if (c == 'p')
+		return (handle_ptr(va_arg(args, void *)));
+	else if (c == '%')
+		return (handle_char('%'));
 	return (0);
 }
 
