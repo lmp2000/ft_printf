@@ -6,7 +6,7 @@
 #    By: lude-jes <lude-jes@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 22:15:01 by lude-jes          #+#    #+#              #
-#    Updated: 2025/11/18 22:31:18 by lude-jes         ###   ########.fr        #
+#    Updated: 2025/11/18 23:32:07 by lude-jes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME): $(LIBFT) $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c ft_printf.h
-	$(CC) $(FLAGS) -I. -I$(LIBFT_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I. -I$(LIBFT_DIR) -c $< -o $@
 
 $(LIBFT):
 	make -C $(LIBFT_DIR)

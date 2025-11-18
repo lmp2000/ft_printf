@@ -6,29 +6,29 @@
 /*   By: lude-jes <lude-jes@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 22:02:28 by lude-jes          #+#    #+#             */
-/*   Updated: 2025/11/16 23:46:41 by lude-jes         ###   ########.fr       */
+/*   Updated: 2025/11/18 23:27:12 by lude-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "ft_printf.h"
 
-int	data_type(char c, va_list args)
+int	data_type(char c, va_list *args)
 {
 	if (c == 'c')
-		return (handle_char((char)va_arg(args, int)));
+		return (handle_char((char)va_arg(*args, int)));
 	else if (c == 's')
-		return (handle_string(va_arg(args, char *)));
+		return (handle_string(va_arg(*args, char *)));
 	else if (c == 'd' || c == 'i')
-		return (handle_int(va_arg(args, int)));
+		return (handle_int(va_arg(*args, int)));
 	else if (c == 'u')
-		return (handle_unsigned(va_arg(args, unsigned int)));
+		return (handle_unsigned(va_arg(*args, unsigned int)));
 	else if (c == 'x')
-		return (handle_hex(va_arg(args, unsigned int), 0));
+		return (handle_hex(va_arg(*args, unsigned int), 0));
 	else if (c == 'X')
-		return (handle_hex(va_arg(args, unsigned int), 1));
+		return (handle_hex(va_arg(*args, unsigned int), 1));
 	else if (c == 'p')
-		return (handle_ptr(va_arg(args, void *)));
+		return (handle_ptr(va_arg(*args, void *)));
 	else if (c == '%')
 		return (handle_char('%'));
 	return (0);
@@ -48,7 +48,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			count += data_type(format[i], args);
+			count += data_type(format[i], &args);
 		}
 		else
 		{
